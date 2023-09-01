@@ -1,0 +1,3 @@
+iOS ToDo application
+---
+What will be used here: Swift, Xcode, Storyboard, CocoaPods, Alamofire, Firebase...
