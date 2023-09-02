@@ -15,6 +15,7 @@
 		2A802D4C2AA1EAC700275F17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A802D4A2AA1EAC700275F17 /* LaunchScreen.storyboard */; };
 		2AE6F4E82AA23E5B00BBF8A9 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE6F4E72AA23E5B00BBF8A9 /* ToDo.swift */; };
 		2AE6F4EC2AA23F6800BBF8A9 /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE6F4EB2AA23F6800BBF8A9 /* ToDoTableViewController.swift */; };
+		2AE7B2BE2AA37683001F719D /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE7B2BD2AA37683001F719D /* ToDoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2A802D4D2AA1EAC700275F17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AE6F4E72AA23E5B00BBF8A9 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		2AE6F4EB2AA23F6800BBF8A9 /* ToDoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewController.swift; sourceTree = "<group>"; };
+		2AE7B2BD2AA37683001F719D /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				2A802D452AA1EAC700275F17 /* Main.storyboard */,
 				2AE6F4E72AA23E5B00BBF8A9 /* ToDo.swift */,
 				2AE6F4EB2AA23F6800BBF8A9 /* ToDoTableViewController.swift */,
+				2AE7B2BD2AA37683001F719D /* ToDoCell.swift */,
 				2A20057B2AA316A700ACBCFB /* ToDoDetailTableViewController.swift */,
 				2A802D482AA1EAC700275F17 /* Assets.xcassets */,
 				2A802D4A2AA1EAC700275F17 /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AE6F4E82AA23E5B00BBF8A9 /* ToDo.swift in Sources */,
+				2AE7B2BE2AA37683001F719D /* ToDoCell.swift in Sources */,
 				2A20057C2AA316A700ACBCFB /* ToDoDetailTableViewController.swift in Sources */,
 				2AE6F4EC2AA23F6800BBF8A9 /* ToDoTableViewController.swift in Sources */,
 				2A802D402AA1EAC700275F17 /* AppDelegate.swift in Sources */,
