@@ -29,17 +29,17 @@ class ToDoTableViewController: UITableViewController {
     @IBAction func unwindToToDoList(segue: UIStoryboardSegue) {
         guard segue.identifier == "saveUnwind" else { return }
         
-//        let sourceVC = segue.source as! ToDoTableViewController
-//        if let toDo = sourceVC.toDo {
+        let sourceVC = segue.source as! ToDoDetailTableViewController
+        if let toDo = sourceVC.toDo {
 //            if let selectedIndexPath = tableView.indexPathForSelectedRow {
 //                toDos[selectedIndexPath.row] = toDo
 //                tableView.reloadRows(at: [selectedIndexPath], with: .none)
 //            } else {
-//                let newIndexPath = IndexPath(row: toDos.count, section: 0)
-//                toDos.append(toDo)
-//                tableView.insertRows(at: [newIndexPath], with: .automatic)
-//            }
-//        }
+                let newIndexPath = IndexPath(row: toDos.count, section: 0)
+                toDos.append(toDo)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+        }
     }
 
     // MARK: - Table view data source

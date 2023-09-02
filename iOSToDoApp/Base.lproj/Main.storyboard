@@ -45,7 +45,7 @@
         <!--New To-Do-->
         <scene sceneID="vVr-gN-apw">
             <objects>
-                <tableViewController id="Ccr-WD-Rbs" sceneMemberID="viewController">
+                <tableViewController id="Ccr-WD-Rbs" customClass="ToDoDetailTableViewController" customModule="iOSToDoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="mdO-vN-tY7">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,7 +60,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="34.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hbe-gC-mKR">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hbe-gC-mKR" userLabel="Is Complete Button">
                                                     <rect key="frame" x="16" y="0.0" width="28" height="34.333333333333336"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" image="circle" catalog="system">
@@ -69,11 +69,18 @@
                                                     <state key="selected" image="checkmark.circle.fill" catalog="system">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="isCompleteButtonTapped:" destination="Ccr-WD-Rbs" eventType="touchUpInside" id="n8A-9i-gxB"/>
+                                                    </connections>
                                                 </button>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Remind me to..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jFo-Oa-aEs">
                                                     <rect key="frame" x="52" y="0.0" width="325" height="34.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="returnPressed:" destination="Ccr-WD-Rbs" eventType="primaryActionTriggered" id="0pZ-6r-MNr"/>
+                                                        <action selector="textEditingChanged:" destination="Ccr-WD-Rbs" eventType="editingChanged" id="JWW-qy-yfS"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -128,6 +135,9 @@
                                                         <!--2023-09-01 10:30:00 +0000-->
                                                     </date>
                                                     <locale key="locale" localeIdentifier="ru"/>
+                                                    <connections>
+                                                        <action selector="datePickerChanged:" destination="Ccr-WD-Rbs" eventType="primaryActionTriggered" id="sAl-Qp-Q2O"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -167,18 +177,6 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="c04-9p-bkl">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" id="FpV-A3-j7h">
-                                        <rect key="frame" x="0.0" y="711.33333015441895" width="393" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FpV-A3-j7h" id="DBg-Nj-f4k">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="Ccr-WD-Rbs" id="h2z-Ag-PIb"/>
@@ -197,6 +195,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dueDateDatePicker" destination="AgL-xD-QBw" id="nFT-CC-HaR"/>
+                        <outlet property="dueDateLabel" destination="ca9-6m-5ZV" id="7Qr-Nq-YLf"/>
+                        <outlet property="isCompleteButton" destination="Hbe-gC-mKR" id="S1p-o0-iik"/>
+                        <outlet property="notesTextView" destination="36T-pE-nU1" id="RSc-h6-7qf"/>
+                        <outlet property="saveButton" destination="Jam-tu-vYX" id="JRL-ki-MeS"/>
+                        <outlet property="titleTextField" destination="jFo-Oa-aEs" id="Zmp-tZ-vfk"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgU-GO-mAO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="upv-4z-Iw5" userLabel="Exit" sceneMemberID="exit"/>
