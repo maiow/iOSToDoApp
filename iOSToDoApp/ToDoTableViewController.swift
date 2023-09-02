@@ -38,7 +38,7 @@ class ToDoTableViewController: UITableViewController {
                 let newIndexPath = IndexPath(row: toDos.count, section: 0)
                 toDos.append(toDo)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
-            }
+//            }
         }
     }
 
